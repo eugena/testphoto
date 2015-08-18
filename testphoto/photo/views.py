@@ -34,9 +34,9 @@ class PhotoListView(generic.ListView):
         # Intersection
         qs = Photo.objects.filter(
                 pk__in=TaggedItem.objects.values('object_id').filter(
-                        tag__in=Tag.objects.filter(slug__in=tags),
-                        tag__tag_state__state=1,
-                        content_type=ContentType.objects.get_for_model(Photo.objects.model)
+                    tag__in=Tag.objects.filter(slug__in=tags),
+                    tag__tag_state__state=1,
+                    content_type=ContentType.objects.get_for_model(Photo.objects.model)
                 ).annotate(cnt=Count('object_id')).filter(cnt=len(tags)
             ).values_list("object_id", flat=True)
         )
