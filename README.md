@@ -29,7 +29,7 @@ python manage.py migrate
 Загрузка данных:
 
 ```bash
-python manage.py loaddata fixtures/initial_data.json
+python manage.py loaddata fixtures/initial_data.yml
 ```
 
 Запуск сайта:
