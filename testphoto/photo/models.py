@@ -14,6 +14,7 @@ class Photo(models.Model):
 
     tags = TaggableManager()
 
+
 class Tagstate(models.Model):
     """
     Tag state model
@@ -22,5 +23,3 @@ class Tagstate(models.Model):
     state = models.PositiveSmallIntegerField(
         default=0,
         choices=((0, 'Published'), (1, 'Hidden')), )
-
-
