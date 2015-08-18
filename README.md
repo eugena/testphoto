@@ -3,12 +3,12 @@ testphoto
 
 # Установка
 
-Установка пакетов (нужен pip)
+Установка пакетов (нужен pip):
 
 ```bash
 pip install -r requirements.txt
 ```
-Создание базы данных
+Создание базы данных:
 
 ```sql
 CREATE DATABASE `testphoto` CHARACTER SET utf8 COLLATE utf8_general_ci;
@@ -20,25 +20,25 @@ GRANT SELECT, INSERT, UPDATE, REFERENCES, DELETE, CREATE, DROP, ALTER, INDEX, TR
 GRANT GRANT OPTION ON `testphoto`.* TO 'testphoto'@'';
 ```
 
-Запуск миграции
+Запуск миграции:
 
 ```bash
 python manage.py migrate
 ```
 
-Загрузка данных
+Загрузка данных:
 
 ```bash
 python manage.py loaddata fixtures/initial_data.json
 ```
 
-Запуск сайта
+Запуск сайта:
 
 ```bash
 python manage.py runserver
 ```
-или через сокет
+или через сокет.
 
 
 # Улучшения
-1. Перенести state в таблицу tag для полноценного индексирования
+1. Перенести state в таблицу tag для полноценного индексирования.
