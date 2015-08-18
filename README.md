@@ -29,8 +29,10 @@ python manage.py migrate
 Загрузка данных:
 
 ```bash
-python manage.py loaddata fixtures/initial_data.yml
+python manage.py loaddata fixtures/initial_data_photo.yml
+python manage.py loaddata fixtures/initial_data_tag.yml
 ```
+Важно! Изменить contentype для модели Photo в таблице TaggedItem в соответствии с темб как создаст запись Django.
 
 Запуск сайта:
 
