@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 from django.contrib.contenttypes.models import ContentType
 from django.views import generic
 
@@ -24,6 +22,7 @@ class PhotoListView(generic.ListView):
         qs = Photo.objects.filter(
             pk__in=TaggedItem.objects.filter(
                 tag__in=Tag.objects.filter(slug__in=slug.split(',')),
+                tag__tag_state__state=1,
                 content_type=ContentType.objects.get_for_model(Photo.objects.model)
             ).values_list("object_id", flat=True)
         )
@@ -33,6 +32,5 @@ class PhotoListView(generic.ListView):
             qs = qs.order_by('-created')
 
         self.object_list = qs
-        kwargs.update(object_list=self.object_list)
         context = self.get_context_data(**kwargs)
         return self.render_to_response(context)
