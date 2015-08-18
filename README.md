@@ -32,7 +32,7 @@ python manage.py migrate
 python manage.py loaddata fixtures/initial_data_photo.yml
 python manage.py loaddata fixtures/initial_data_tag.yml
 ```
-Важно! Изменить contentype для модели Photo в таблице TaggedItem в соответствии с темб как создаст запись Django.
+Важно! Изменить contenttype для модели Photo в таблице TaggedItem в соответствии с тем, как создаст запись Django.
 
 Запуск сайта:
 
